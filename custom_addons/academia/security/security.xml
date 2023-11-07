@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="academy_category" model="ir.module.category">
+        <field name="name">Academia</field>
+        <field name="description">Permisos en la academia</field>
+        <field name="sequence">10</field>
+    </record>
+    <!-- Grupo de estudiantes de la academia -->
+    <record id="group_student" model="res.groups">
+        <field name="name">Alumno</field>
+        <field name="comment">Alumnos apuntados a las clases</field>
+        <field name="category_id" ref="academy_category"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+    <!--Grupo de profesores de la academia-->
+    <record id="group_teacher" model="res.groups">
+        <field name="name">Profesores</field>
+        <field name="comment">Profesores que imparten asignaturas en la academia</field>
+        <field name="category_id" ref="academy_category"/>
+        <field name="implied_ids" eval="[(4, ref('group_student'))]"/>
+    </record>
+    <!--Grupo de administradores de la academia-->
+    <record id="group_administrator" model="res.groups">
+        <field name="name">Academia</field>
+        <field name="comment">Permisos en la academia</field>
+        <field name="category_id" ref="academy_category"/>
+        <field name="implied_ids" eval="[(4, ref('group.teacher'))]"/>
+    </record>
+</odoo>

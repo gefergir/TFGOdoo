@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_academia_asistencia" model="ir.actions.act_window">
+        <field name="name">Asistencia</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">alumno</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_asistencia"
+              name="Asistencia"
+              parent="menu_academia_cl"
+              action="action_academia_asistencia"
+              sequence="10"/>
+</odoo>

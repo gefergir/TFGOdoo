@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_academia_root"
+              name="Academia"
+              sequence="10"/>
+    <menuitem id="menu_academia_cl"
+              name="Clase"
+              parent="menu_academia_root"
+              sequence="10"/>
+
+</odoo>
